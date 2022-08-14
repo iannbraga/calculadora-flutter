@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class Keyboard extends StatelessWidget {
   final void Function(String) cb;
 
-  Keyboard(this.cb, {Key? key}) : super(key: key);
+  const Keyboard(this.cb, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +14,7 @@ class Keyboard extends StatelessWidget {
         children: <Widget>[
           ButtonRow(
             [
-              Button.operation(cb: cb, text: 'C'),
-              Button.operation(cb: cb, text: 'DEL'),
+              Button.operation(cb: cb, text: 'C', size: 2),
               Button.operation(cb: cb, text: '%'),
               Button.operation(cb: cb, text: '/'),
             ],
@@ -47,7 +46,7 @@ class Keyboard extends StatelessWidget {
           ButtonRow(
             [
               Button.big(cb: cb, text: '0'),
-              Button(cb: cb, text: ','),
+              Button(cb: cb, text: '.'),
               Button.operation(cb: cb, text: '='),
             ],
           ),
